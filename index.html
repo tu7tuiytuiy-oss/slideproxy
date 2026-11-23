@@ -3,41 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Social Proxy</title>
-  <link rel="icon" id="tabIcon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#09090c">
+  <title>SlideSpace — Your viewing workspace</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <main class="shell">
-    <div class="mark">SP</div>
-    <p class="eyebrow">PRIVATE WEB GATEWAY</p>
-    <h1>Browse through<br><span>your proxy.</span></h1>
-    <p class="sub">A small, self-hosted gateway for approved YouTube and TikTok URLs.</p>
-    <form id="proxyForm">
-      <label for="url">Paste a YouTube or TikTok URL</label>
-      <div class="inputrow">
-        <input id="url" type="url" placeholder="https://www.youtube.com/" required>
-        <button type="submit">Go <span>↗</span></button>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="SlideSpace home">
+      <span class="brandmark"><span></span><span></span><span></span></span>
+      <span>slide<span class="brand-accent">space</span></span>
+    </a>
+    <div class="top-actions"><span class="status-dot"></span><span>PERSONAL WORKSPACE</span><span class="version">BETA</span></div>
+  </header>
+
+  <main class="layout">
+    <section class="hero">
+      <div class="kicker"><span class="kicker-line"></span> YOUR SPACE. YOUR FLOW.</div>
+      <h1>Everything you<br>came to <em>watch.</em></h1>
+      <p class="subtitle">One simple launchpad for your favorite videos.<br>Drop a link and jump straight in.</p>
+
+      <section class="launch-card">
+        <div class="card-head"><div><span class="tiny-label">QUICK LAUNCH</span><h2>Open a destination</h2></div><div class="orbit-icon">↗</div></div>
+        <form id="proxyForm">
+          <label for="url">VIDEO LINK</label>
+          <div class="input-wrap"><span class="link-icon">⌁</span><input id="url" type="url" placeholder="Paste a YouTube or TikTok URL…" required autocomplete="url"><button type="submit">Launch <span>↗</span></button></div>
+        </form>
+        <div class="divider"><span>OR CHOOSE A PLATFORM</span></div>
+        <div class="platforms">
+          <button type="button" class="platform youtube" data-url="https://www.youtube.com/"><span class="platform-icon">▶</span><span><b>YouTube</b><small>Videos & channels</small></span><span class="platform-arrow">↗</span></button>
+          <button type="button" class="platform tiktok" data-url="https://www.tiktok.com/"><span class="platform-icon">♪</span><span><b>TikTok</b><small>Short-form videos</small></span><span class="platform-arrow">↗</span></button>
+        </div>
+        <p id="error" role="status" aria-live="polite"></p>
+      </section>
+
+      <div class="footnote"><span class="shield">◇</span> Private workspace · Use links only · No sign-in required</div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-glow"></div>
+      <div class="side-top"><span class="tiny-label">WORKSPACE PREVIEW</span><span class="live-pill"><i></i> READY</span></div>
+      <div class="preview-window">
+        <div class="window-bar"><span></span><span></span><span></span><div class="window-address">slidespace / launchpad</div></div>
+        <div class="preview-content">
+          <div class="preview-mark"><span class="brandmark"><span></span><span></span><span></span></span></div>
+          <div class="preview-lines"><i></i><i></i><i></i></div>
+          <div class="preview-tile"><div class="tile-play">▶</div><div class="tile-line"></div><div class="tile-line short"></div></div>
+          <div class="preview-caption">YOUR NEXT WATCH<br><strong>Starts here.</strong></div>
+        </div>
       </div>
-    </form>
-    <div class="cloak">
-      <div>
-        <strong>Disguise this tab</strong>
-        <small>Change the tab title and icon to resemble Google Slides.</small>
-      </div>
-      <label class="switch" aria-label="Disguise tab as Google Slides">
-        <input id="cloakToggle" type="checkbox">
-        <span class="slider"></span>
-      </label>
-    </div>
-    <div class="shortcuts">
-      <button type="button" data-url="https://www.youtube.com/">YouTube</button>
-      <button type="button" data-url="https://www.tiktok.com/">TikTok</button>
-    </div>
-    <p id="error" role="status"></p>
-    <p class="note">This starter forwards HTTP requests. Modern video sites may not fully work because their apps rely on streaming, scripts, cookies, anti-bot checks and other domains.</p>
-    <footer>Only use where you have permission. Do not enter passwords or personal information.</footer>
+      <div class="stats"><div><strong>02</strong><span>PLATFORMS</span></div><div><strong>01</strong><span>LAUNCHPAD</span></div><div><strong>∞</strong><span>POSSIBILITIES</span></div></div>
+      <div class="side-note"><span class="note-mark">✳</span><span><b>A little space to focus.</b><small>Built to be simple. Made to move.</small></span></div>
+    </aside>
   </main>
+
+  <footer><span>© SlideSpace</span><span>INDEPENDENT PROJECT · NOT AFFILIATED WITH GOOGLE, YOUTUBE OR TIKTOK</span></footer>
   <script src="/app.js"></script>
 </body>
 </html>
